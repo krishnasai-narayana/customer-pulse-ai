@@ -1,0 +1,6 @@
+streamlit
+streamlit-mic-recorder
+ollama
+faster-whisper
+ctranslate2
+numpy
