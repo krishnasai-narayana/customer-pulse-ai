@@ -1,4 +1,4 @@
-# 🎙️ Voice Customer Recovery Agent
+# 🎙️ CustomerPulse AI Agent
 
 ## Overview
 
