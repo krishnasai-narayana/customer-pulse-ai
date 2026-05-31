@@ -28,72 +28,65 @@ Voice Customer Recovery Agent acts as an intelligent customer recovery assistant
 * Creating personalized customer responses
 
 ---
-## Architecture Diagram
-┌──────────────────────────────────────┐
-│      Voice Customer Recovery Agent   │
-└──────────────────────────────────────┘
+## Architecture
 
-            🎤 Customer Voice
-                     │
-                     ▼
-
-┌──────────────────────────────────────┐
-│      Faster-Whisper Speech Engine    │
-│   Telugu / Hindi / English Support   │
-└──────────────────────────────────────┘
-                     │
-                     ▼
-
-┌──────────────────────────────────────┐
-│         Translation Layer            │
-│ Voice → Transcript Conversion        │
-└──────────────────────────────────────┘
-                     │
-                     ▼
-
-┌──────────────────────────────────────┐
-│          Gemma 4 Agent Layer         │
-├──────────────────────────────────────┤
-│ Intent Agent                         │
-│ Sentiment Agent                      │
-│ Decision Agent                       │
-└──────────────────────────────────────┘
-                     │
-                     ▼
-
-┌──────────────────────────────────────┐
-│      Customer Intelligence Layer     │
-├──────────────────────────────────────┤
-│ Churn Risk Prediction                │
-│ Recovery Score Calculation           │
-│ Escalation Detection                 │
-│ Customer Status Classification       │
-└──────────────────────────────────────┘
-                     │
-                     ▼
-
-┌──────────────────────────────────────┐
-│         Recovery Recommendation      │
-├──────────────────────────────────────┤
-│ Recommended Action                   │
-│ Manager Summary                      │
-│ Customer Response Generation         │
-└──────────────────────────────────────┘
-                     │
-                     ▼
-
-┌──────────────────────────────────────┐
-│         Streamlit Dashboard          │
-├──────────────────────────────────────┤
-│ Intent                               │
-│ Sentiment                            │
-│ Churn Risk                           │
-│ Recovery Score                       │
-│ Escalation Alerts                    │
-│ Multi-language Response              │
-└──────────────────────────────────────┘
----
-
+```text
+┌──────────────────────────────┐
+│      Customer Voice Input    │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│     Faster-Whisper Engine    │
+│  Telugu | Hindi | English    │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│     Translation Layer        │
+│ Speech → Text Conversion     │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│       Gemma 4 Agent Layer    │
+├──────────────────────────────┤
+│ • Intent Agent              │
+│ • Sentiment Agent           │
+│ • Decision Agent            │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Customer Intelligence Layer  │
+├──────────────────────────────┤
+│ • Churn Risk Prediction     │
+│ • Recovery Score           │
+│ • Escalation Detection     │
+│ • Customer Classification  │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Recovery Recommendation Hub  │
+├──────────────────────────────┤
+│ • Recommended Actions       │
+│ • Manager Summary           │
+│ • Customer Response         │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│     Streamlit Dashboard      │
+├──────────────────────────────┤
+│ Intent                       │
+│ Sentiment                    │
+│ Churn Risk                   │
+│ Recovery Score               │
+│ Escalation Alerts            │
+│ Multi-Language Response      │
+└──────────────────────────────┘
+```
 ## Key Features
 
 ### 🎤 Voice-First Experience
